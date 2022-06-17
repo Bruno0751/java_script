@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <script>
+        var pessoas = [{
+            nome: "Bruno",
+            idade: 25
+        }, {
+            nome: "Clarissa",
+            idade: 28
+        }, {
+            nome: "Mauricio",
+            idade: 22
+        }]
+        var usuario = {
+            posicao: 0,
+            get atual() {
+                return pessoas[this.posicao]
+            },
+            set atual(posicao) {
+                this.posicao = posicao;
+            },
+            proximo() {
+                ++this.posicao;
+            },
+            anterior() {
+                --this.posicao;
+            }
+        }
+        console.log(usuario.atual);
+        usuario.proximo();
+        console.log(usuario.atual);
+        usuario.proximo();
+        console.log(usuario.atual);
+        usuario.anterior();
+
+        console.log(usuario.atual);
+
+        usuario.atual = 0;
+        console.log(usuario.atual);
+
+        usuario.atual = 2;
+        console.log(usuario.atual);
+        var userNovo = {
+            nome1: "Clarissa",
+            idade1: 28
+        }
+        var cor = "Azul";
+        var cor1 = "Amarelo";
+        var user = {
+            //           expred
+            ...userNovo,
+            nome: "Bruno",
+            cor: cor,
+            cor1,
+            idade: 25,
+            peso: 41.500,
+            altura: 1.51,
+            nascimento: '17/03/1996',
+            'linguagens-de-programacao': ['Assembly', 'B', 'C', 'Java', 'Cobol', 'Pascal', 'Fortran', 'C++', 'Phyton', 'JavaScript'],
+            digaOi: function(name) {
+                return `Ola ${name}`;
+            },
+            digaTchau(name) {
+                return `Thchau ${name}`;
+            }
+        };
+        //        delete user.idade;
+        var localizacao = {
+                pais: "Brasil",
+                estado: "RS",
+                cidade: 'Porto Alegre'
+            }
+            //        var nomvoObj = Object.assign({}, user, localizacao);
+            //        Object.assign(user, localizacao);
+            //        console.log(user);
+    </script>
+</body>
+
+</html>

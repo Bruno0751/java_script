@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 11px;
+            background-color: rgb(211, 211, 211);
+            text-align: center;
+            border: 20px solid #000000;
+            height: 100vh;
+        }
+        
+        #editor {
+            background-color: #ffffff;
+            height: auto;
+            min-height: 100px;
+            border: solid #000000;
+            border-width: 1px;
+        }
+        
+        .ql-toolbar {
+            border-width: 1px !important;
+            border-style: solid !important;
+            border-color: #000000 !important;
+        }
+    </style>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+</head>
+
+<body>
+    <h1>QUILL</h1>
+
+    <div id="editor" onInput="editar()"></div>
+    <div id="edicao"></div>
+
+    <script>
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: [
+                    [{
+                        header: [1, 2, 3, 4, 5, 6, false]
+                    }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['image', 'code-block'],
+                    ['link'],
+                    [{
+                        'script': 'sub'
+                    }, {
+                        'script': 'super'
+                    }],
+                    [{
+                        'list': 'ordered'
+                    }, {
+                        'list': 'bullet'
+                    }],
+                    ['clean']
+                ]
+            },
+            placeholder: 'Escreva Aqui...',
+            theme: 'snow'
+        });
+        var editor = document.querySelector("div#editor");
+
+        function editar() {
+            let edicao = window.document.getElementById("edicao");
+            let delta = quill.editor.delta.ops[0].insert;
+            console.log(delta);
+            edicao.innerHTML = delta;
+        }
+    </script>
+</body>
+
+</html>

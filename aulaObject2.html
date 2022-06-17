@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <script>
+        function mostrarObjeto({
+            nome,
+            idade,
+            peso,
+            pais = 'Japão'
+        }) {
+            console.log(nome);
+            console.log(idade);
+            console.log(peso);
+            console.log(pais);
+        }
+        var velhoUsuario = {
+                nome: 'Bruno',
+                idade: 25,
+                peso: 41.900
+            }
+            //var novaUsuario = {
+            //    nome: "Bruno",
+            //    idade: 25
+            //}
+
+        //var usuario = {
+        //    nome: {
+        //        primeiro: 'Bruno'
+        //    }
+        //};
+
+        //var {nome: {primeiro}} = usuario;
+        //console.log(primeiro);
+
+        //var {nome: {segundo = 'Gressler'}} = usuario;
+        //console.log(segundo);
+
+        //mostrarObjeto(velhoUsuario);
+
+        //console.log(Object.keys(v));
+
+        var props = Object.keys(velhoUsuario);
+        for (let i = 0; i < props.length; i++) {
+            //console.log('', velhoUsuario[props[i]]);
+        }
+
+        for (let prop of props) {
+            //console.log('', velhoUsuario[prop]);
+        }
+
+        for (let prop2 in velhoUsuario) {
+            if (velhoUsuario.hasOwnProperty(prop2)) {
+                console.log(prop2);
+            }
+        }
+    </script>
+</body>
+
+</html>

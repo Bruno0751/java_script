@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+        
+        form,
+        input,
+        #resposta {
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        input {
+            border-radius: 4px;
+        }
+        
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .center {
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style/jqueryToas.css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqueryToast.js"></script>
+</head>
+
+<body>
+    <h1>Teste Number</h1>
+    <div class="center">
+        <button id="btn" type="button" onClick="habilitar()">desabilitar</button>
+
+        <br><br>
+
+        <input id="num" type="number" placeholder="Idade..." onkeypress="return vericarMaxNumber(event)">
+        <button id="brn" type="button" onclick="enviar()">enviar</button>
+        <div id="resposta"></div>
+
+    </div>
+    <script>
+        function habilitar() {
+            let btn = window.document.querySelector("button#btn");
+            let elemento = window.document.getElementsByTagName("input")[0];
+            if (elemento.id === "num") {
+                elemento.setAttribute("disabled", "");
+                elemento.setAttribute("id", "desabilatado");
+                btn.innerText = "Habilitar";
+            } else {
+                elemento.removeAttribute("disabled");
+                elemento.setAttribute("id", "num");
+                btn.innerText = "Desabilitar";
+            }
+        }
+
+        function vericarMaxNumber(event) {
+            let elemento = event.target;
+            let charCode = event.charCode ? event.charCode : event.keyCode;
+            if (elemento.id === "num") {
+                if (charCode !== 8 && charCode !== 9) {
+                    var max = 4;
+                    if ((charCode < 48 || charCode > 57) || (elemento.value.length >= max)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        function enviar(event) {
+            let num = window.document.querySelector("input#num").value;
+            let elemento = window.document.querySelector("div#resposta");
+            elemento.innerHTML = num;
+        }
+    </script>
+</body>
+
+</html>

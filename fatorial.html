@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+       body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        #principal {
+            background-color: white;
+            padding: 0;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            margin: 0 auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        #inputFat{
+            border-radius: 9px;
+            width: 15%;
+        }
+        #buttonFat{
+            border-radius: 9px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fatorial</h1>
+    <div id="principal">
+        <input type="number" name="numFat" id="inputFat" placeholder="Number">
+        <button type="button" id="buttonFat" onClick="fatoring()">Fator</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function fatoring(){
+            let txtNumber = document.querySelector("input#inputFat");
+            let txtResult = document.querySelector("div#result");
+            if(txtNumber.value == ""){
+                alert("Campo Vazio");
+            }else{
+                let number = Number(txtNumber.value);
+                let fat = 1;
+                for(let i = number; i > 1; i--){
+                    fat *= i;
+                }
+                txtResult.innerHTML = `Fatorial ${fat}`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

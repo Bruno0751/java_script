@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Order</h1>
+
+    <h2>Números:</h2>
+    <p>Com função de comparação</p>
+    <div id="numerosResposta"></div>
+    <div id="numerosR"></div>
+    <div id="divTesteNumeros"></div>
+
+    <div id="nomesResposta"></div>
+
+    <div id="datasRespostaEUA"></div>
+    <div id="datasRespostaBR"></div>
+    <div id="divTesteData"></div>
+
+
+    <script>
+        /*PEGANDO DIV´S RESPOSTAS*/
+        var numerosResposta = window.document.getElementById('numerosResposta');
+        var numerosR = window.document.getElementById('numerosR');
+        var nomesResposta = window.document.getElementById('nomesResposta');
+        var datasRespostaEUA = window.document.getElementById('datasRespostaEUA');
+        var datasRespostaBR = window.document.getElementById('datasRespostaBR');
+        var divTesteData = window.document.getElementById('divTesteData');
+        var divTesteNumeros = window.document.getElementById('divTesteNumeros');
+
+        /*AUX´S*/
+        const pi = 3.14;
+        var aux = [];
+        var dataTesteDatas = ["2020-03-17", "2010-03-20", "2000-11-11", "2000-01-01", "2009-01-01", "2021-08-20", "1900-11-12", "1900-02-20", "1800-02-03"];
+        var numerow2uiTeste = ["00001", "000001", "00001001", "00001113", "0006", "112021"];
+
+        /*PREPARANDO AMBIENTE*/
+        var numeros = [0, 1, 2, 3, 32, 39, 31, 1001, 100, 107, 108, 109, 11];
+        var nomes = ["Liz", "Bruno", " Hugo", "Bruna", " Tiago", " Rafael", " Brenda", " Fernando", " sAliso"];
+        var datasBR = [" 2020/03/17", " 2010/03/20", " 2000/11/11", " 2000/01/01", " 2009/01/01", " 2021/08/20", " 1900/11/12", " 1900/02/20", " 1800/02/03"];
+        var datasEUA = [" 2020-03-17", " 2010-03-20", " 2000-11-11", " 2000-01-01", " 2009-01-01", " 2021-08-20", " 1900-11-12", " 1900-02-20", " 1800-02-03"];
+
+        /*PROCESSOS*/
+        function ordenarNumeros(numero1, numero2) {
+            if (numero1 < numero2) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+        let datasOrder = dataTesteDatas.sort();
+        for (var i = 0; i < datasOrder.length; i++) {
+            aux[i] = datasOrder[i].toString().split('-').reverse().join('/');
+        }
+
+        /*SAIDA DE DADOS*/
+        numerosResposta.innerHTML = `<h3>${numeros.sort(ordenarNumeros)}</h3><hr>`;
+        numerosR.innerHTML = `<h2>Números:</h2>Sem função de comparação<h3>${numeros.sort()}</h3><hr>`;
+        divTesteNumeros.innerHTML = `<h2>Números:</h2>W2ui<h3>${numerow2uiTeste.sort()}</h3><hr>`;
+        nomesResposta.innerHTML = `<h2>Nomes:</h2><h3>${nomes.sort()}</h3><hr>`;
+        datasRespostaEUA.innerHTML = `<h2>DatasEUA:</h2>Sem função de comparação<h3>${datasEUA.sort()}</h3><hr>`;
+        datasRespostaBR.innerHTML = `<h2>DatasBR:</h2>Sem função de comparação<h3>${datasBR.sort()}</h3><hr>`;
+        divTesteData.innerHTML = `<h2>Datas Teste:</h2><h3>${aux}</h3><hr>`;
+    </script>
+</body>
+
+</html>

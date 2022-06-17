@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Push</h1>
+    <input type="number" placeholder="Numero" id="numero">
+    <button type="button" onClick="checar()">OK</button>
+
+    <div id="resposta"></div>
+    <script>
+        var array = [];
+        var resposta = window.document.getElementById('resposta');
+        
+        function checar() {
+
+
+            let numero = window.document.getElementById('numero');
+
+            array.push(numero.value);
+
+            resposta.innerHTML = `${array}`;
+
+            numero.value = '';
+
+
+
+
+            //const fullNumber = '2034399002125581****';
+            //const last4Digits = fullNumber.slice(-4);
+            ///const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+
+        }
+    </script>
+</body>
+
+</html>

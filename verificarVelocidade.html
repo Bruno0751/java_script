@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Velocidade</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        input {
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            border-radius: 9px;
+            margin: 10px 0;
+            background-color: aqua;
+            color: #000000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Validar Velocidade</h1>
+    <div>
+        <label>Digite Sua Velocidade:</label>
+    </div>
+    <input type="number">
+    <div>
+        <button type="button" value="Checar" onclick="checar()">Checar</button>
+    </div>
+    <div></div>
+
+    <script>
+        function checar() {
+            //var txtVelocidade = document.getElementsByTagName('input')[0];
+            var velocidade = Number(document.getElementsByTagName('input')[0].value);
+            var resposta = document.getElementsByTagName('div')[0];
+            //var numVelocidade = Number(txtVelocidade.value);
+            resposta.innerHTML = `Sua Velocidade é ${velocidade}Kh`;
+            if (velocidade > 60) {
+                resposta.innerHTML += `<p>Você foi <strong>Multado</strong></p>`;
+            } else {
+                resposta.innerHTML += `<p>Volte Sempre</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

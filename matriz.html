@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            text-align: center;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Matriz</h1>
+    <div id="principal">
+        <div id="bidimensionalArray"></div>
+
+        <br><br><br><br><br>
+
+        <input type="number" name="" id="inputArray00" placeholder="Position 00">
+        <input type="number" name="" id="inputArray01" placeholder="Position 01">
+
+        <input type="number" name="" id="inputArray10" placeholder="Position 10">
+        <input type="number" name="" id="inputArray11" placeholder="Position 11">
+
+        <input type="number" name="" id="inputArray20" placeholder="Position 20">
+        <input type="number" name="" id="inputArray21" placeholder="Position 21">
+
+        <button type="button" onClick="chamar()">Construct</button>
+
+        <div id="respostaMatriz"></div>
+    </div>
+    <script>
+        var result = document.querySelector("div#bidimensionalArray");
+        let biArray = [
+            [3, 4],
+            [4, 2],
+            [6, 10]
+        ];
+
+        for (let linha = 0; linha < 3; linha++) {
+            for (let coluna = 0; coluna <= 1; coluna++) {
+                if (coluna < 1) {
+                    result.innerHTML += `${biArray[linha][coluna]} `;
+                } else {
+                    result.innerHTML += `${biArray[linha][coluna]}<br>`;
+                }
+            }
+        }
+
+        function chamar() {
+            let tabela = "";
+
+            let posicao00 = Number(window.document.querySelector('input#inputArray00').value);
+            let posicao01 = Number(window.document.querySelector('input#inputArray01').value);
+            let posicao10 = Number(window.document.querySelector('input#inputArray10').value);
+            let posicao11 = Number(window.document.querySelector('input#inputArray11').value);
+            let posicao20 = Number(window.document.querySelector('input#inputArray20').value);
+            let posicao21 = Number(window.document.querySelector('input#inputArray21').value);
+            let respostaMatriz = window.document.querySelector('div#respostaMatriz');
+
+            tabela = `
+                    <table>
+                        <tr>
+                            <td>${posicao00}</td>
+                            <td>${posicao01}</td>
+                        </tr>
+                        <tr>
+                            <td>${posicao10}</td>
+                            <td>${posicao11}</td>
+                        </tr>
+                        <tr>
+                            <td>${posicao20}</td>
+                            <td>${posicao21}</td>
+                            </tr>
+                    </table>`;
+
+            respostaMatriz.innerHTML = `${tabela}`;
+        }
+    </script>
+</body>
+
+</html>

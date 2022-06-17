@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            text-align: center;
+            background-color: aliceblue;
+        }
+        
+        button {
+            border-radius: 9px;
+            background-color: blue;
+            color: white;
+            margin-top: 10px;
+        }
+        
+        .audio {
+            border-color: #000000;
+            border-width: 1px;
+            border-style: solid;
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MUSICAS</h1>
+
+    <div class="audio">
+        <div>
+            <button onclick="document.getElementById('player').play()">Play</button>
+            <button onclick="document.getElementById('player').pause()">Pause</button>
+            <button onclick="document.getElementById('player').volume+=0.1">Aumentar volume</button>
+            <button onclick="document.getElementById('player').volume-=0.1">Diminuir volume</button>
+        </div>
+        <h4>Aviões - Inquilina</h4>
+        <div>
+            <a href="https://www.vagalume.com.br/avioes-do-forro/inquilina.html" target="_blank">Letra</a>
+        </div>
+        <audio id="player" autoplay="autoplay" controls="controls">
+            <source src="sounds/avioesInquilina.mp3" type="audio/mp3" />
+            seu navegador não suporta HTML5
+        </audio>
+    </div>
+
+    <div class="audio">
+        <div>
+            <button onclick="document.getElementById('player2').play()">Play</button>
+            <button onclick="document.getElementById('player2').pause()">Pause</button>
+            <button onclick="document.getElementById('player2').volume+=0.1">Aumentar volume</button>
+            <button onclick="document.getElementById('player2').volume-=0.1">Diminuir volume</button>
+        </div>
+        <h4>Beijo Roubado - rastapé</h4>
+        <div>
+            <a href="https://www.vagalume.com.br/rastape/beijo-roubado.html" target="_blank">Letra</a>
+        </div>
+        <audio id="player2" autoplay="autoplay" controls="controls">
+            <source src="sounds/beijoRoubado.mp3" type="audio/mp3" />
+            seu navegador não suporta HTML5
+        </audio>
+    </div>
+
+    <div class="audio">
+        <div>
+            <button onclick="document.getElementById('player3').play()">Play</button>
+            <button onclick="document.getElementById('player3').pause()">Pause</button>
+            <button onclick="document.getElementById('player3').volume+=0.1">Aumentar volume</button>
+            <button onclick="document.getElementById('player3').volume-=0.1">Diminuir volume</button>
+        </div>
+        <h4>Banda djavu-O que pensa que eu sou</h4>
+        <div>
+            <a href="https://www.vagalume.com.br/banda-beija-flor/o-que-pensa-que-eu-sou.html" target="_blank"></a>Letra</a>
+        </div>
+        <audio id="player3" autoplay="autoplay" controls="controls">
+            <source src="sounds/oQuePensaqueEuSou.mp3" type="audio/mp3" />
+            seu navegador não suporta HTML5
+        </audio>
+    </div>
+
+    <div class="audio">
+        <div>
+            <button onclick="document.getElementById('player4').play()">Play</button>
+            <button onclick="document.getElementById('player4').pause()">Pause</button>
+            <button onclick="document.getElementById('player4').volume+=0.1">Aumentar volume</button>
+            <button onclick="document.getElementById('player4').volume-=0.1">Diminuir volume</button>
+        </div>
+        <h4>Agepê - Moro Onde Não Mora Ninguém</h4>
+        <div>
+            <a href="https://www.vagalume.com.br/agepe/moro-onde-nao.html" target="_blank">Letra</a>
+        </div>
+        <audio id="player4" autoplay="autoplay" controls="controls">
+            <source src="sounds/moroOndeNaoMoraNinguem.mp3" type="audio/mp3" />
+            seu navegador não suporta HTML5
+        </audio>
+    </div>
+
+    <div class="audio">
+        <div>
+            <button onclick="document.getElementById('player5').play()">Play</button>
+            <button onclick="document.getElementById('player5').pause()">Pause</button>
+            <button onclick="document.getElementById('player5').volume+=0.1">Aumentar volume</button>
+            <button onclick="document.getElementById('player5').volume-=0.1">Diminuir volume</button>
+        </div>
+        <h4>Alika - No te ponga triste</h4>
+        <div>
+            <a href="#" target="_blank">Letra</a>
+        </div>
+        <audio id="player5" autoplay="autoplay" controls="controls">
+            <source src="sounds/alika/noTePongasTriste.mp3" type="audio/mp3" />
+            seu navegador não suporta HTML5
+        </audio>
+    </div>
+</body>
+
+</html>

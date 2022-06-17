@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veririfica Idade</title>
+    <style>
+        body {
+            background-color: rgb(70, 142, 236);
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            width: 500px;
+            padding: 15px;
+            margin: auto;
+            box-shadow: 5px 5px 10px #000000;
+        }
+
+        footer {
+            color: #ffffff;
+            font-style: italic;
+            text-align: center;
+        }
+
+        #idade {
+            width: 50%;
+            border-radius: 10px;
+        }
+        button {
+            border-radius: 9px;
+            margin: 10px 0;
+            background-color: aqua;
+            color: #000000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Veririfica Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascime
+                <input type="number" id="idade">
+            </p>
+
+            <div>
+            <input type="radio" name="radioSexo">
+            <label for="radioSexo">Homem</label>
+            <input type="radio" name="radioSexo">
+            <label for="radioSexo">Mulher</label>
+            </div>
+
+            <button onClick="verificar()">Verificar</button>
+        </div>
+        <div id="resposta"></div>
+    </section>
+    <footer>
+        <p>&copy; Curso</p>
+    </footer>
+    <script>
+        var data = new Date();
+        var ano = data.getFullYear();
+
+        function verificar() {
+
+            let anoNascimento = window.document.getElementById('idade');
+            let radioSexo = window.document.getElementsByName('radioSexo');
+            let res = window.document.getElementById('resposta');
+
+
+            let idade = ano - Number(anoNascimento.value);
+            let genero = '';
+            let imagem = window.document.createElement('img');
+            imagem.setAttribute('height', '405px');
+            imagem.setAttribute('width', '82%');
+            imagem.setAttribute('id', 'foto');
+            if (radioSexo[0].checked) {
+                genero = 'Homem';
+                imagem.setAttribute('src', 'homem.jpg');
+                imagem.setAttribute('alt', 'Foto De Home');
+            } else if (radioSexo[1].checked) {
+                genero = 'Mulher';
+                imagem.setAttribute('src', 'mulher.jpg');
+                imagem.setAttribute('alt', 'Foto de Mulher');
+            }
+            res.innerHTML = `Você é ${genero} e Sua Idade é ${idade}`;
+            res.appendChild(imagem);
+        }
+    </script>
+</body>
+
+</html>

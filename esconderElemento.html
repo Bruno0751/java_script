@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esconder Elemento</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Esconder Elemento</h1>
+    <h2 id="elemento">Hello World</h2>
+    <button onClick="acao()">Esconder</button>
+    <script>
+        function acao(){
+            let elemento = window.document.getElementById("elemento");
+            elemento.setAttribute('style', 'display: none;');
+            alert('ok');
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <label for="sete">7</label>
+    <input type="checkbox" id="sete">
+    <label for="oito">8</label>
+    <input type="checkbox" id="oito">
+    <button type="button" onclick="gravar()">Gravar</button>
+    <button type="button" onclick="mudarEstado()">Mudar</button>
+
+    <div id="valor"></div>
+    <script>
+        var sete = document.querySelector("input#sete");
+
+        function gravar() {
+            let valor = document.querySelector("div#valor");
+            let oito = document.querySelector("input#oito");
+
+            let lista = [];
+            if (sete.checked && oito.checked) {
+                lista.push(7, 8);
+            } else if (sete.checked && !oito.checked) {
+                lista.push(7);
+            } else if (!sete.checked && oito.checked) {
+                lista.push(8);
+            }
+            valor.innerHTML = lista;
+        }
+
+        function mudarEstado() {
+            let sete = document.querySelector("input#sete");
+            sete.setAttribute("checked", "");
+        }
+    </script>
+</body>
+
+</html>

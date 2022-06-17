@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerofill</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Zerofill</h1>
+    <input type="text" name="" id="digito" placeholder="Zero fill em String" oninput="mascararString()" maxlength="5">
+    <div id="respostaString"></div>
+
+    <br><br><br>
+
+    <input type="number" name="" id="digitoN" placeholder="Zero fill em numero" oninput="mascararNumber()">
+    <div id="respostaNumero"></div>
+    <script>
+        const fullNumber = '2034399002125581';
+
+        function mascararString() {
+            let digito = window.document.querySelector('input#digito');
+            let respostaString = window.document.querySelector('div#respostaString');
+            respostaString.innerHTML = `${digito.value.padStart(5, '0')} ${typeof(digito)}`;
+        }
+
+        function mascararNumber() {
+            let digitoN = Number(window.document.querySelector('input#digitoN').value);
+            let respostaNumero = window.document.querySelector('div#respostaNumero');
+            respostaNumero.innerHTML = `${digitoN.toString().padStart(5, '0')} ${typeof(digitoN)}`;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+        
+        #div1 {
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>addEventListener</h1>
+    <!--
+        onclick="clicar()" onmouseout="sair()" onmousemove="entrar()"
+    -->
+    <div id="div1">interaja...</div>
+
+    <script>
+        //window.prompt('');
+        //window.confirm('');
+
+        var div1 = window.document.getElementById('div1');
+        //document.write(n1.toFixed(2).replace('.',','));
+        //document.write(n1.toLocaleString('pt-BR',{style:'currency',currency: 'BRL'}));
+        //document.write(window.document.URL);
+        //document.write(window.navigator.appName);
+        div1.addEventListener('click', clicar);
+        div1.addEventListener('mousemove', entrar);
+        div1.addEventListener('mouseout', sair);
+
+        function clicar() {
+            div1.innerText = "Clicou";
+        }
+
+        function sair() {
+            div1.innerText = "Saiu";
+        }
+
+        function entrar() {
+            div1.innerText = "Entrou";
+        }
+        //texto.innerHTML += 'Resolução L: ' + screen.width + ' px<hr>';
+        //texto.innerHTML += 'Resolução A: ' + screen.height + ' px<hr>';
+        //texto.innerHTML += 'Resolução L disponivel: ' + screen.availWidth + ' px<hr>';
+        //texto.innerHTML += 'Resolução A disponivel: ' + screen.availHeight + ' px<hr>';
+        //texto.innerHTML += 'Profundidade de cores (imagem): ' + screen.colorDepth + ' px<hr>';
+        //texto.innerHTML += 'Resolução da cor da Tela (pixel): ' + screen.pixelDepth + ' px<hr>';
+    </script>
+</body>
+
+</html>

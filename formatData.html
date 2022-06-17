@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            background-color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FORMATAR DATA</h1>
+    <p id="dataBR">17/03/1996</p>
+    <p id="dataEUA">1996-03-1</p>
+    <br><br>
+    <div id="respostaBR">BR - EUA =</div>
+    <div id="respostaEUA">EUA - BR =</div>
+    <button onClick="formatar()">Formatar</button>
+    <script>
+        function formatar() {
+            let br = window.document.querySelector("p#dataBR").innerText;
+            let eua = window.document.querySelector("p#dataEUA").innerText;
+            let respostaBR = window.document.querySelector("div#respostaBR");
+            let respostaEUA = window.document.querySelector("div#respostaEUA");
+
+
+            let dataEUA = new Date(eua);
+            let day = dataEUA.getUTCDate();
+            let month = dataEUA.getMonth() + 1;
+            let year = dataEUA.getUTCFullYear();
+
+            respostaBR.innerText = br.replaceAll("/", "-");
+            respostaEUA.innerText = day.toString().padStart(2, '0') + "/" + month.toString().padStart(2, '0') + "/" + year
+
+        }
+    </script>
+</body>
+
+</html>

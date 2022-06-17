@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="js/head.js"></script>
+    <style>
+        body {
+            text-align: center;
+            background-color: aliceblue;
+        }
+        
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            width: 500px;
+            padding: 15px;
+            margin: auto;
+            box-shadow: 5px 5px 10px #000000;
+        }
+        
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        
+        footer {
+            color: #ffffff;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="carregar()">
+    <h1>Horário</h1>
+    <div></div>
+    <div></div>
+    <img src="" alt="Foto Hora Atual">
+    <p>&copy; Curso</p>
+    <script>
+        function carregar() {
+            let horaAtual = window.document.getElementsByTagName('div')[0];
+            let menssagem = window.document.getElementsByTagName('div')[1];
+            let imagem = window.document.getElementsByTagName('img')[0];
+
+            let data = new Date();
+            let hora = data.getHours();
+            let minutos = data.getMinutes();
+            let segundos = data.getSeconds();
+
+            let ano = data.getUTCFullYear();
+            let mes = data.getUTCMonth();
+            let dia = data.getDate();
+
+            horaAtual.innerHTML = `Agora são ${hora}:${minutos}:${segundos}<br>Data ${dia}/${mes}/${ano}`;
+
+            if (hora >= 3 && hora < 12) {
+                menssagem.innerHTML = '!!!Bom Dia!!!';
+                imagem.src = 'images/horario/manha.jpg';
+            } else if (hora >= 12 && hora < 18) {
+                menssagem.innerHTML = '!!!Boa Tarde!!!';
+                imagem.src = 'images/horario/tarde.jpg';
+            } else {
+                menssagem.innerHTML = '!!!Boa Noite!!!';
+                imagem.src = 'images/horario/noite.jpeg';
+            }
+        }
+    </script>
+</body>
+
+</html>
